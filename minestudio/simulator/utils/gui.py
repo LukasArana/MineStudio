@@ -340,7 +340,6 @@ class MinecraftGUI:
         layout.begin_update()
         layout.x = self.window.width // 2
         layout.y = self.window.height // 2
-        layout.end_update()
         layout.anchor_x = 'center'
         layout.anchor_y = 'center'
         layout.content_valign = 'center'
