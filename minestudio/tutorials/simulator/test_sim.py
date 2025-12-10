@@ -14,7 +14,7 @@ from minestudio.simulator.callbacks import (
     RewardsCallback, 
     CommandsCallback, 
     TaskCallback,
-    FastResetCallback, 
+    FastResetCallback,
     HardResetCallback,
     PrevActionCallback
 )
@@ -27,16 +27,16 @@ if __name__ == '__main__':
                 {"seed": 19961103, "position": [-164, 69, -1493]}, 
             ]),
             SpeedTestCallback(50), 
-            SummonMobsCallback([{'name': 'cow', 'number': 10, 'range_x': [-5, 5], 'range_z': [-5, 5]}]),
-            MaskActionsCallback(inventory=0, camera=np.array([0., 0.])), 
+      #      SummonMobsCallback([{'name': 'cow', 'number': 10, 'range_x': [-5, 5], 'range_z': [-5, 5]}]),
+           # MaskActionsCallback(inventory=0, camera=np.array([0., 0.])), 
             RecordCallback(record_path="./output", fps=30),
-            RewardsCallback([{
-                'event': 'kill_entity', 
-                'objects': ['cow', 'sheep'], 
-                'reward': 1.0, 
-                'identity': 'kill sheep or cow', 
-                'max_reward_times': 5, 
-            }]),
+           # RewardsCallback([{
+           #     'event': 'kill_entity', 
+          #      'objects': ['cow', 'sheep'], 
+          #      'reward': 1.0, 
+         #       'identity': 'kill sheep or cow', 
+         #       'max_reward_times': 5, 
+         #   }]),
             CommandsCallback(commands=[
                 '/give @p minecraft:iron_sword 1',
                 '/give @p minecraft:diamond 64',
@@ -45,10 +45,10 @@ if __name__ == '__main__':
             #     biomes=['mountains'],
             #     random_tp_range=1000,
             # ), 
-            TaskCallback([
-                {'name': 'chop', 'text': 'mine the oak logs'}, 
-                {'name': 'diamond', 'text': 'mine the diamond ore'},
-            ]), 
+          #  TaskCallback([
+         #       {'name': 'chop', 'text': 'mine the oak logs'}, 
+         #       {'name': 'diamond', 'text': 'mine the diamond ore'},
+          #  ]), 
             PrevActionCallback(), 
         ]
     )
